@@ -1,0 +1,23 @@
+body {
+    background-color:#fff2de;
+}
+
+.navbar-brand {
+    background-color: #ffd99f;
+    height: 100px;
+}
+
+.button1 {
+    background-color: #fff2de;
+    color: #b49a72;
+    border: 2px solid #b49a72;
+}
+
+.button1:hover {
+    background-color: #b49a72;
+    color: white;
+}
+
+.card-header {
+    background-color: #b49a72;
+}

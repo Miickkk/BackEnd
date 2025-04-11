@@ -1,0 +1,28 @@
+<%- include ("partials/header.ejs") %>
+
+  <body>
+    <%- include ("partials/navbar.ejs") %>
+      <div class="container">
+        <br>
+        <hr>
+        <h1>Detalhes do Produto</h1>
+        <hr>
+        <br>
+        <div class="card">
+          <div class="card-body">
+            <h3>
+              <%= produto.nome %>
+            </h3>
+            <br>
+            <img src="<%= produto.imagem %>" alt="<%= produto.nome %>" width="300">
+            <p><strong>Descrição:</strong>
+              <%= produto.descricao %>
+            </p>
+            <br>
+            <p><strong>Preço:</strong> R$ <%= produto.preco %></p>
+
+          </div>
+        </div>
+      </div>
+  </body>
+  <%- include ("partials/footer.ejs") %>

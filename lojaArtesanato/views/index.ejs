@@ -1,0 +1,23 @@
+<%- include ("partials/header.ejs") %>
+<body>
+    <%- include ("partials/navbar.ejs") %>
+    <div class="container">
+      <br>
+      <H1>Produtos</H1>
+      <hr>
+      <a href="/cadastrar"><button class="button button1">Cadastrar</button></a>
+      <% cadastro.forEach(function(p) { %>
+            <br>
+            <br>
+            <div class="card">
+              <div class="card-body">
+              <h3><%= p.nome %></h3>
+              <img src="<%= p.imagem %>" alt="<%= p.nome %>" width="200">              </div>
+                <div class="card-footer">
+                <a href="produto/<%= p.id %>"><button class="button button1">Ver Produto</button></a>
+                </div>
+            </div>  
+          <% }); %>
+      </div>
+</body>
+<%- include ("partials/footer.ejs") %>
