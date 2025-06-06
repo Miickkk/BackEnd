@@ -2,10 +2,10 @@
 <%- include ("../../partials/navbar.ejs") %>
 
 <div class="container">
-    <br>
+    <hr>
     <h2>Categorias</h2>
-    <br>
-    <a class="btn btn-primary mb-3" href="/admin/categories/new">Criar nova Categoria</a>
+    <a class="btn btn-success" href="/admin/categories/new">Criar nova categoria</a>
+    <hr>
     <table class="table table-bordered">
         <thead>
             <tr>
@@ -17,20 +17,20 @@
         </thead>
         <tbody>
             <% categories.forEach(category => { %>
-            <tr>
-                <td><%= category.id %></td>
-                <td><%= category.title %></td>
-                <td><%= category.slug %></td>
-                <td>
-                    <!-- Aqui vc pode colocar links de editar ou deletar-->
-                     <a href="/admin/categories/edit/<%= category.id %>" class="btn btn-warning btn-sm">Editar</a>
-
-                     <form method="POST" action="/categories/delete" style="display:incline;" onsubmit="confirmarDelecao(event, this)">
-                        <input type="hidden" name="id" value="<%= category.id %>">
-                        <button class="btn btn-danger">Deletar</button>
-                     </form>
-                </td>
-            </tr>
+                <tr>
+                    <td><%= category.id %></td>
+                    <td><%= category.title %></td>
+                    <td><%= category.slug %></td>
+                    <td>
+                        <!-- Aqui você pode colocar links de editar ou deletar -->
+                        <a href="/admin/categories/edit/<%= category.id %>" class="btn btn-warning btn-sm">Editar</a>
+                        
+                        <form method="POST" action="/categories/delete" style="display:inline;" onsubmit="confirmarDelecao(event, this)">
+                            <input type="hidden" name="id" value="<%= category.id %>">
+                            <button class="btn btn-danger">Deletar</button>
+                        </form>
+                    </td>
+                </tr>
             <% }) %>
         </tbody>
     </table>
@@ -39,7 +39,7 @@
 <%- include ("../../partials/footer.ejs") %>
 <script>
     function confirmarDelecao(event, form){
-        event.preventDefalt();
+        event.preventDefault();
         var decision = confirm("Você quer deletar esta categoria?")
         if(decision){
             form.submit();
